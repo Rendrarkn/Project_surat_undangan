@@ -1,0 +1,25 @@
+Buatkan saya project aplikasi web untuk mengelola surat undangan dengan fitur CRUD (Create, Read, Update, Delete). Gunakan teknologi berikut:
+
+Backend: Express.js
+View engine: EJS
+Database: MySQL
+Fitur yang harus ada:
+
+Halaman utama menampilkan daftar surat undangan yang tersimpan di database.
+Form untuk menambahkan surat undangan baru, dengan field seperti:
+Nama Undangan
+Tanggal Acara
+Lokasi
+Deskripsi
+Fitur untuk mengedit surat undangan yang sudah ada.
+Fitur untuk menghapus surat undangan.
+Gunakan routing RESTful untuk operasi CRUD.
+Buat koneksi ke database MySQL dan buat tabel yang sesuai untuk menyimpan data surat undangan.
+Tampilkan pesan sukses atau error setelah operasi CRUD.
+Berikan contoh kode lengkap untuk:
+
+Struktur folder project
+File utama Express (misal: app.js atau server.js)
+File routing
+File view EJS untuk daftar, form tambah, dan form edit
+Contoh query MySQL untuk membuat tabel surat undangan

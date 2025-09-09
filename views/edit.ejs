@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Undangan</title>
+</head>
+<body>
+    <h1>Edit Surat Undangan</h1>
+    <form action="/edit/<%= invitation.id %>" method="post">
+        <label for="nama_undangan">Nama Undangan:</label><br>
+        <input type="text" id="nama_undangan" name="nama_undangan" value="<%= invitation.nama_undangan %>" required><br><br>
+        
+        <label for="tanggal_acara">Tanggal Acara:</label><br>
+        <input type="date" id="tanggal_acara" name="tanggal_acara" value="<%= invitation.tanggal_acara.toISOString().split('T')[0] %>" required><br><br>
+        
+        <label for="lokasi">Lokasi:</label><br>
+        <input type="text" id="lokasi" name="lokasi" value="<%= invitation.lokasi %>" required><br><br>
+        
+        <label for="deskripsi">Deskripsi:</label><br>
+        <textarea id="deskripsi" name="deskripsi" rows="4" cols="50"><%= invitation.deskripsi %></textarea><br><br>
+        
+        <button type="submit">Update</button>
+    </form>
+    <br>
+    <a href="/">Kembali ke Daftar Undangan</a>
+</body>
+</html>
