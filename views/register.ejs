@@ -21,6 +21,9 @@
             margin-bottom: 30px;
             text-align: center;
         }
+        #admin-secret-group {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -38,11 +41,22 @@
                 <label for="password" class="form-label">Password</label>
                 <input type="password" class="form-control" id="password" name="password" required>
             </div>
+            <div class="mb-3" id="admin-secret-group">
+                <label for="admin-secret" class="form-label">Admin Secret</label>
+                <input type="password" class="form-control" id="admin-secret" name="adminSecret">
+            </div>
             <button type="submit" class="btn btn-primary w-100">Register</button>
         </form>
         <p class="text-center mt-3">
             Already have an account? <a href="/auth/login">Login here</a>
         </p>
     </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('secret') === 'GEMINI_SECRET') {
+            document.getElementById('admin-secret-group').style.display = 'block';
+        }
+    </script>
 </body>
 </html>

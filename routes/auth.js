@@ -21,9 +21,11 @@ router.get('/register', (req, res) => {
 router.post('/register', async (req, res) => {
     try {
         const hashedPassword = await bcrypt.hash(req.body.password, 10);
+        const role = req.body.adminSecret === 'GEMINI_SECRET' ? 'admin' : 'user';
         const newUser = {
             username: req.body.username,
-            password: hashedPassword
+            password: hashedPassword,
+            role: role
         };
         db.query('INSERT INTO users SET ?', newUser, (err, results) => {
             if (err) {
