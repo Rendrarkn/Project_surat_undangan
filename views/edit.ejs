@@ -17,7 +17,7 @@
             
             <div class="mb-4">
                 <label for="tanggal_acara" class="block text-gray-700 text-sm font-bold mb-2">Tanggal Acara:</label>
-                <input type="date" id="tanggal_acara" name="tanggal_acara" value="<%= invitation.tanggal_acara.toISOString().split('T')[0] %>" class="shadow-sm appearance-none border border-blue-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                <input type="date" id="tanggal_acara" name="tanggal_acara" value="<%= new Date(invitation.tanggal_acara).toISOString().split('T')[0] %>" class="shadow-sm appearance-none border border-blue-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" required>
             </div>
             
             <div class="mb-4">
