@@ -19,8 +19,8 @@
         </div>
         <div class="flex justify-between items-center mb-8">
             <div></div>
-            <a href="/add" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
-                Tambah Undangan
+            <a href="/export" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+                Export to Excel
             </a>
         </div>
         
@@ -32,7 +32,6 @@
                         <th scope="col" class="py-3 px-6 text-left text-xs font-semibold text-gray-900 uppercase tracking-wider">Tanggal Acara</th>
                         <th scope="col" class="py-3 px-6 text-left text-xs font-semibold text-gray-900 uppercase tracking-wider">Lokasi</th>
                         <th scope="col" class="py-3 px-6 text-left text-xs font-semibold text-gray-900 uppercase tracking-wider">Deskripsi</th>
-                        <th scope="col" class="py-3 px-6 text-center text-xs font-semibold text-gray-900 uppercase tracking-wider">Aksi</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-200">
@@ -42,12 +41,6 @@
                             <td class="py-4 px-6 whitespace-nowrap text-sm text-gray-500"><%= new Date(invitation.tanggal_acara).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' }) %></td>
                             <td class="py-4 px-6 whitespace-nowrap text-sm text-gray-500"><%= invitation.lokasi %></td>
                             <td class="py-4 px-6 whitespace-nowrap text-sm text-gray-500"><%= invitation.deskripsi %></td>
-                            <td class="py-4 px-6 text-center text-sm font-medium">
-                                <div class="flex justify-center items-center space-x-4">
-                                    <a href="/edit/<%= invitation.id %>" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition duration-300">Edit</a>
-                                    <a href="/delete/<%= invitation.id %>" onclick="return confirm('Yakin ingin menghapus?')" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition duration-300">Hapus</a>
-                                </div>
-                            </td>
                         </tr>
                     <% }); %>
                 </tbody>
