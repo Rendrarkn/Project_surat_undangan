@@ -8,6 +8,7 @@ CREATE TABLE surat_undangan (
     tanggal_acara DATE NOT NULL,
     lokasi VARCHAR(255) NOT NULL,
     deskripsi TEXT,
+    kategori VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 

@@ -29,6 +29,21 @@
                 <label for="deskripsi" class="block text-gray-700 text-sm font-bold mb-2">Deskripsi:</label>
                 <textarea id="deskripsi" name="deskripsi" rows="4" class="shadow-sm appearance-none border border-blue-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"><%= invitation.deskripsi %></textarea>
             </div>
+
+            <div class="mb-6">
+                <label for="kategori" class="block text-gray-700 text-sm font-bold mb-2">Kategori Undangan:</label>
+                <select id="kategori" name="kategori" class="shadow-sm appearance-none border border-blue-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    <option value="Undangan Pernikahan" <%= invitation.kategori === 'Undangan Pernikahan' ? 'selected' : '' %>>Undangan Pernikahan</option>
+                    <option value="Undangan Ulang Tahun" <%= invitation.kategori === 'Undangan Ulang Tahun' ? 'selected' : '' %>>Undangan Ulang Tahun</option>
+                    <option value="Undangan Rapat" <%= invitation.kategori === 'Undangan Rapat' ? 'selected' : '' %>>Undangan Rapat</option>
+                    <option value="Undangan Seminar / Workshop" <%= invitation.kategori === 'Undangan Seminar / Workshop' ? 'selected' : '' %>>Undangan Seminar / Workshop</option>
+                    <option value="Undangan Tahlilan / Kenduri" <%= invitation.kategori === 'Undangan Tahlilan / Kenduri' ? 'selected' : '' %>>Undangan Tahlilan / Kenduri</option>
+                    <option value="Undangan Reuni" <%= invitation.kategori === 'Undangan Reuni' ? 'selected' : '' %>>Undangan Reuni</option>
+                    <option value="Undangan Syukuran / Aqiqah" <%= invitation.kategori === 'Undangan Syukuran / Aqiqah' ? 'selected' : '' %>>Undangan Syukuran / Aqiqah</option>
+                    <option value="Undangan Wisuda" <%= invitation.kategori === 'Undangan Wisuda' ? 'selected' : '' %>>Undangan Wisuda</option>
+                    <option value="Undangan Kegiatan Sekolah" <%= invitation.kategori === 'Undangan Kegiatan Sekolah' ? 'selected' : '' %>>Undangan Kegiatan Sekolah</option>
+                </select>
+            </div>
             
             <div class="flex items-center justify-between">
                 <button type="submit" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline transition duration-300">
