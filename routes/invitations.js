@@ -39,6 +39,21 @@ router.post('/edit/:id', isAdmin, (req, res) => {
     });
 });
 
+// Add route - GET (form)
+router.get('/add', isAdmin, (req, res) => {
+    res.render('add');
+});
+
+// Add route - POST (create new invitation)
+router.post('/add', isAdmin, (req, res) => {
+    const { nama_undangan, tanggal_acara, lokasi, deskripsi } = req.body;
+    const sql = "INSERT INTO surat_undangan (nama_undangan, tanggal_acara, lokasi, deskripsi) VALUES (?, ?, ?, ?)";
+    db.query(sql, [nama_undangan, tanggal_acara, lokasi, deskripsi], (err, result) => {
+        if (err) throw err;
+        res.redirect('/');
+    });
+});
+
 // Delete route
 router.get('/delete/:id', isAdmin, (req, res) => {
     const sql = "DELETE FROM surat_undangan WHERE id = ?";
